@@ -1,9 +1,14 @@
-package com.walletmix.superapp
+package com.walletmix.superapp.ui.splash
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import androidx.lifecycle.lifecycleScope
+import com.walletmix.superapp.R
+import com.walletmix.superapp.ScannerActivity
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 @Suppress("DEPRECATION")
 class SplashActivity : AppCompatActivity() {
@@ -15,10 +20,16 @@ class SplashActivity : AppCompatActivity() {
 
         val splashDurationMillis = 1960L
 
-        Handler().postDelayed({
+        lifecycleScope.launch {
+            delay(splashDurationMillis)
             startActivity(Intent(this@SplashActivity, ScannerActivity::class.java))
             finish()
-        }, splashDurationMillis)
+        }
+
+//        Handler().postDelayed({
+//            startActivity(Intent(this@SplashActivity, ScannerActivity::class.java))
+//            finish()
+//        }, splashDurationMillis)
     }
 }
 
