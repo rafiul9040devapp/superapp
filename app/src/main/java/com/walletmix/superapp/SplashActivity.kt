@@ -11,6 +11,8 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
+        //going to use the lifecycle scope for splash
+
         val splashDurationMillis = 1960L
 
         Handler().postDelayed({
