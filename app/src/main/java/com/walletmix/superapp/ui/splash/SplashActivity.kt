@@ -17,15 +17,14 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         //going to use the lifecycle scope for splash
-
+        //apply the lottie library to load the animation
+        //try to see the documentation
         val splashDurationMillis = 1960L
-
         lifecycleScope.launch {
             delay(splashDurationMillis)
             startActivity(Intent(this@SplashActivity, ScannerActivity::class.java))
             finish()
         }
-
 //        Handler().postDelayed({
 //            startActivity(Intent(this@SplashActivity, ScannerActivity::class.java))
 //            finish()
